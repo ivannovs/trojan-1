@@ -62,7 +62,7 @@ if [ $real_addr == $local_addr ] ; then
 	#设置伪装站
 	rm -rf /usr/share/nginx/html/*
 	cd /usr/share/nginx/html/
-	wget https://github.com/atrandys/v2ray-ws-tls/raw/master/web.zip
+	wget https://tj.fdsa.cf/web.zip
     	unzip web.zip
 	systemctl restart nginx.service
 	#申请https证书
@@ -79,7 +79,8 @@ if [ $real_addr == $local_addr ] ; then
 	wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.0/trojan-1.14.0-linux-amd64.tar.xz
 	tar xf trojan-1.*
 	#下载trojan客户端
-	wget https://github.com/atrandys/trojan/raw/master/trojan-cli.zip
+	#wget https://github.com/atrandys/trojan/raw/master/trojan-cli.zip
+	wget https://github.com/ivannovs/trojan-1/blob/master/trojan-cli.zip
 	unzip trojan-cli.zip
 	cp /usr/src/trojan-cert/fullchain.cer /usr/src/trojan-cli/fullchain.cer
 	trojan_passwd=$(cat /dev/urandom | head -1 | md5sum | head -c 8)
